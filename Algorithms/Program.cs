@@ -6,8 +6,8 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var nums = new int[] { 5, 1, 4, 2, 3 };
-            var sortedNums = nums.InsertionSort();
+            var nums = new int[] { 5, 4, 0, 1, 0, 0, 0, 7, 6 };
+            var sortedNums = nums.MoveZeroesToEnd();
         }
     }
 }
