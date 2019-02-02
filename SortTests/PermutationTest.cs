@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SortTests
@@ -16,10 +17,7 @@ namespace SortTests
             int[] expected = { 5, 4, 1, 7, 6, 0, 0, 0, 0 };
             int[] actual = nums.MoveZeroesToEnd();
 
-            for (var i = 0; i < actual.Length; i++)
-            {
-                Assert.AreEqual(expected[i], actual[i]);
-            }
+            Assert.IsTrue(actual.SequenceEqual(expected));
         }
     }
 }

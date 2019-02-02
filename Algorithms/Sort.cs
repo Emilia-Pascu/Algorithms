@@ -30,18 +30,14 @@ namespace Algorithms
         {
             for(var i = 1; i < nums.Length; i++ )
             {
-                for (var j = 0; j < i; j++)
+                var j = i - 1;
+                var currentValue = nums[i];
+                while (j >= 0 && nums[j] > currentValue)
                 {
-                    if(nums[i] < nums[j])
-                    {
-                        var temp = nums[i];
-                        for (var s = i; s > j; s-- )
-                        {
-                            nums[s] = nums[s-1];
-                        }
-                        nums[j] = temp;                        
-                    }
+                    nums[j + 1] = nums[j];
+                    j--;
                 }
+                nums[j + 1] = currentValue;
             }
             return nums;
         }

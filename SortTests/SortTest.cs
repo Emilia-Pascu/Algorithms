@@ -1,5 +1,6 @@
 using Algorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace SortTests
 {
@@ -12,11 +13,8 @@ namespace SortTests
             int[] nums = { 5, 4, 8, 1, 2 };
             int[] expected = { 1, 2, 4, 5, 8 };
             int[] actual = nums.BubbleSort();
-            
-            for (var i = 0; i < actual.Length; i++)
-            {
-                Assert.AreEqual(expected[i], actual[i]);
-            }
+
+            Assert.IsTrue(actual.SequenceEqual(expected));
         }
 
         [TestMethod]
@@ -26,10 +24,7 @@ namespace SortTests
             int[] expected = { 1, 2, 4, 5, 8 };
             int[] actual = nums.InsertionSort();
 
-            for (var i = 0; i < actual.Length; i++)
-            {
-                Assert.AreEqual(expected[i], actual[i]);
-            }
+            Assert.IsTrue(actual.SequenceEqual(expected));
         }
     }
 }
